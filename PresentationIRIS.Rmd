@@ -1,0 +1,47 @@
+---
+title: "IRIS flower plotting"
+author: "Yu Mo"
+date: "February 27, 2019"
+output: 
+  ioslides_presentation
+---
+
+<style type="text/css">
+body, code.r{
+  font-size: 14px;
+}
+pre {
+  font-size: 14px
+}
+</style>
+
+## IRIS flower plotting
+#### Data description
+<font size="3">The measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.</font>
+
+&nbsp;
+
+<font size="3">The first few lines of the IRIS dataset.</font>
+```{r message=FALSE,echo=FALSE}
+library(datasets)
+data(iris)
+head(iris)
+```
+
+## IRIS flower plotting 
+### App documentation 
+<font size="3">The app allows you to pick the species (one or more) from the dataset, and then generates the plot for petal length and with and the plot for sepal length and width for the selected species. If all three species are selected, the plot will look like:</font>
+```{r message=FALSE,echo=FALSE,fig.height=4, fig.width=7}
+plot(iris[,'Sepal.Length'],iris[,'Sepal.Width'],
+       ylim=c(1.5,4.5),xlim=c(3,9),
+       ylab="Sepal Width",xlab="Sepal Length",
+       col=iris$Species) 
+  legend("topleft",inset=0.01,legend=unique(iris$Species),pch=1,col=c(1,2,3),box.lty=0)
+```
+
+## IRIS flower plotting 
+### The App address
+https://moyu.shinyapps.io/IRISplotting2019/
+
+
+
